@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException
     {
         Scanner MyObj = new Scanner(System.in);
-        String user;
+        Scanner answer = new Scanner(System.in);
 
         String[] suits = {"\u2663", "\u2660", "\u2665", "\u2666"};
         String [] values = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9,", "10", "Jack", "Queen", "King"};
@@ -39,12 +39,18 @@ public class Main {
         }
 
         System.out.println("Do you still remember you card?");
-        System.out.println("enter you're answer with a yes or no");
-        user = MyObj.nextLine();
+        System.out.println("Did the pc guessed you're card correctly?");
+        System.out.println("Type a 'yes' if he did Type 'no' if he didn't.");
+        String user = MyObj.nextLine();
+
 
         System.out.println("result of the user: " + user);
 
-        if(answer.equal ("yes"))
+        /////////////////////////////// final part /////////////////////////////////////
+
+
+        // doesn't work
+        if (answer.equals("yes"))
         {
             System.out.println("nicely done");
         }
@@ -54,7 +60,7 @@ public class Main {
             System.out.println("Can a computer look into your mind :O ");
         }
 
-        // user input
+        // yes statement doesn't work.
         // reset console window
         // check if everything works
         // ---------------------------
