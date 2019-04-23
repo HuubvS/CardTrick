@@ -1,9 +1,13 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args)
+    static Thread thread = new Thread();
+    public static void main(String[] args) throws InterruptedException
     {
+        Scanner MyObj = new Scanner(System.in);
+        String user;
 
         String[] suits = {"\u2663", "\u2660", "\u2665", "\u2666"};
         String [] values = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9,", "10", "Jack", "Queen", "King"};
@@ -25,10 +29,32 @@ public class Main {
             System.out.println(values[valueChooser.nextInt(12)]);
             System.out.println("-----------------------------------------------------------------");
     }
-        System.out.println("Screen will be resetted now.");
+        System.out.println("You have 5 seconds to remember you cards, before it reset.");
 
 
-        // need to create a timer
+        for(int i = 5; i >= 0; i--)
+        {
+            thread.sleep(1000);
+            System.out.println(i);
+        }
+
+        System.out.println("Do you still remember you card?");
+        System.out.println("enter you're answer with a yes or no");
+        user = MyObj.nextLine();
+
+        System.out.println("result of the user: " + user);
+
+        if(answer.equal ("yes"))
+        {
+            System.out.println("nicely done");
+        }
+
+        else
+        {
+            System.out.println("Can a computer look into your mind :O ");
+        }
+
+        // user input
         // reset console window
         // check if everything works
         // ---------------------------
