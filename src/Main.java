@@ -1,5 +1,9 @@
+import java.io.Console;
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
+
+import static java.lang.Runtime.*;
 
 public class Main {
 
@@ -25,21 +29,38 @@ public class Main {
         System.out.println("-----------------------------------------------------------------");
 
         for (int i = 0; i < 4; i++) {
-            System.out.println(suits[suitChooser.nextInt(3)]);
+            System.out.print(suits[suitChooser.nextInt(3)]);
             System.out.println(values[valueChooser.nextInt(12)]);
             System.out.println("-----------------------------------------------------------------");
     }
-        System.out.println("You have 5 seconds to remember you cards, before it reset.");
+        System.out.println("You have to remember one card from this combination.");
+        System.out.println("If you already remembered, click enter!");
+        Scanner scan = new Scanner(System.in);
+        String enter = scan.nextLine();
+        for(int a = 0; a<=100; a++)
+            System.out.println();
+
+//        for(int i = 5; i >= 0; i--)
+//        {
+//           thread.sleep(1000);
+//           System.out.println(i);
+//        }
 
 
-        for(int i = 5; i >= 0; i--)
-        {
-            thread.sleep(1000);
-            System.out.println(i);
+        System.out.println("//////////////////////////////////////////////////////////\n" +
+                "//////////////////////////////////////////////////////////\n" +
+                "///////// IT IS MAGIC!!! YOUR CARD IS GONE ///////////////\n" +
+                "//////////////////////////////////////////////////////////\n" +
+                "//////////////////////////////////////////////////////////\n");
+
+        System.out.println("-----------------------------------------------------------------");
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println(suits[suitChooser.nextInt(3)]);
+            System.out.println(values[valueChooser.nextInt(12)]);
+            System.out.println("-----------------------------------------------------------------");
         }
-
-        System.out.println("Do you still remember you card?");
-        System.out.println("Did the pc guessed you're card correctly?");
+        System.out.println("Do you still remember you're card you choose?");
         System.out.println("Type a 'yes' if he did Type 'no' if he didn't.");
         String user = MyObj.nextLine();
 
@@ -49,8 +70,7 @@ public class Main {
         /////////////////////////////// final part /////////////////////////////////////
 
 
-        // doesn't work
-        if (answer.equals("yes"))
+        if (user.equals("yes"))
         {
             System.out.println("nicely done");
         }
@@ -60,13 +80,6 @@ public class Main {
             System.out.println("Can a computer look into your mind :O ");
         }
 
-        // yes statement doesn't work.
-        // reset console window
-        // check if everything works
-        // ---------------------------
-        // create new deck of cards
-        // some ending string input
-        // check if its works afterwards its done.
 
     }
 }
